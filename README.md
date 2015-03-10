@@ -1,5 +1,5 @@
 # hairNow
-Online hairdressing booking system written in javascript and tested with Jasmine.
+Online hairdressing booking system running on Sinatra, postgresql and Ruby. Frontend uses javascript, HTML5 and CSS. Testing with rSpec and Jasmine.
 
 Setup
 ----------
