@@ -11,7 +11,7 @@ feature "Clients can create account" do
 
   scenario "adding a new client creates the clients by 1" do
     visit '/'
-    #click_on "sign_up"
+    click_on "sign_up"
     expect{ new_user }.to change(Client, :count).by(1)
   end
 
