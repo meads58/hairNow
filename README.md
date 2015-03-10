@@ -3,7 +3,7 @@ Online hairdressing booking system running on Sinatra, postgresql and Ruby. Fron
 
 Setup
 ----------
-* Run rake file.
+* Run rake 'auto_migrate'.
 
 About
 ------
