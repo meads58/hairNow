@@ -11,8 +11,16 @@
   </head>
 
   <body>
+    <% if current_user %>
+      Welcome, <%= current_user.first_name %>
+    <form method="post" action="/sessions">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Sign Out">
+    </form>
+    <% end %>
     <%= yield %>
   </body>
 
 
 </html>
+

@@ -10,5 +10,5 @@ def new_user (first_name = "Jim",
   fill_in :phone, :with => phone
   fill_in :password, :with => password
   fill_in :password_confirmation, :with => password_confirmation
-  click_on "create"
+  click_on "Sign Up"
 end

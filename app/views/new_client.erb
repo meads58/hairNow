@@ -1,7 +1,7 @@
 <form class="new_client" action="/client/new" method="post">
   First Name:<input type="text" name="first_name">
   Surname:<input type="text" name="last_name">
-  Email:<input type="text" name="email" value="<%= @client%>">
+  Email:<input type="text" name="email" value="<%= @client.email%>">
   Phone:<input type="text" name="phone">
   Password:<input type="password" name="password">
   Confirm Password:<input type="password" name="password_confirmation">
