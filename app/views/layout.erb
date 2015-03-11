@@ -17,6 +17,15 @@
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="Sign Out">
     </form>
+    <form method="post" action="/appointment">
+      <input type="time" name="start_time">
+      <input type="date" name="date">
+      <input type="submit" value="Book Appointment">
+    </form>
+    <% else %>
+      <p>
+        <a href='/sessions/new'><button type="button">Sign In</button></a>
+      </p>
     <% end %>
     <%= yield %>
   </body>

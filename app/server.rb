@@ -1,7 +1,9 @@
 require 'data_mapper'
 require 'sinatra'
 require './app/model/clients.rb'
-# require_relative 'controller/new.rb'
+require './app/model/appointments.rb'
+require 'rack-flash'
+require 'sinatra/json'
 require_relative 'data_mapper_setup'
 
 class HairNow < Sinatra::Base
@@ -12,6 +14,13 @@ class HairNow < Sinatra::Base
 
   enable :sessions
   set :session_secret, 'super secret'
+  use Rack::Flash
+  use Rack::MethodOverride
+
+
+get '/example.json' do
+  json :title => 'paul', :id => "1", :start => "2015-03-11T15:25:00", :end => '2015-03-11T15:55:00'
+end
 
 get '/' do
   erb :index
@@ -22,7 +31,7 @@ get '/client/new' do
   erb :new_client
 end
 
-post '/client/new' do
+post '/client' do
   @client = Client.create(:first_name =>params[:first_name],
                           :second_name =>params[:second_name],
                           :phone =>params[:phone],
@@ -38,8 +47,23 @@ post '/client/new' do
   end
 end
 
+post '/appointment' do
+
+  @appointment = Appointment.create(:start_time => params[:start_time],
+                                    :date => params[:date],
+                                    :client_id => session[:client_id]
+                                    )
+
+
+  @appointment.save
+  redirect('/')
+
+end
+
+
 get '/sessions/new' do
-   erb :"sessions/new"
+  @appointment = Appointment.new
+  erb :"sessions/new"
  end
 
  post '/sessions' do
@@ -49,13 +73,13 @@ get '/sessions/new' do
      session[:client_id] = client.id
      redirect to('/')
    else
-     # flash[:errors] = ["The user name or password is incorrect"]
      erb :"sessions/new"
    end
  end
 
  delete '/sessions' do
-   # flash[:notice] = "You are signed out"
+
+  flash[:notice] = "You are signed out"
   session[:client_id] = nil
   redirect to('/')
  end
