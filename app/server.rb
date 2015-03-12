@@ -17,10 +17,14 @@ class HairNow < Sinatra::Base
   use Rack::Flash
   use Rack::MethodOverride
 
+appointmentArray = Appointment.all.each do |appt|
+              appt.start
+              appt.client.first_name
+            end
+
 
 get '/example.json' do
-  json [{:title => 'paul', :id => "1", :start => "2015-03-11T15:25:00", :end => '2015-03-11T15:55:00'}, {:title => 'meads', :id => "2", :start => "2015-03-11T15:25:00", :end => '2015-03-11T15:55:00'}]
-  # @appointment.to_json();
+  json appointmentArray
 end
 
 get '/' do
@@ -48,20 +52,15 @@ post '/client' do
   end
 end
 
-post '/example' do
+post '/appointment' do
+  booking = params[:date] + "T" + params[:start_time] + ":00"
+  puts booking
   @appointment = Appointment.create(:start_time => params[:start_time],
-                                    :start => params[:date],
+                                    :start => booking,
                                     :client_id => session[:client_id]
                                     )
-
-
   @appointment.save
-  @appointment = @appointment.to_json
-  puts "************************"
-  puts @appointment
-  # '/example.json' << @appointment
   redirect('/')
-
 end
 
 

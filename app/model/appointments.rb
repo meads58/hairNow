@@ -6,7 +6,7 @@ class Appointment
 
   property :id,              Serial
   property :start_time,      String
-  property :start,            Date
+  property :start,           String
 
   belongs_to :client
 
