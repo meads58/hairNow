@@ -20,6 +20,7 @@ class HairNow < Sinatra::Base
 
 get '/example.json' do
   json [{:title => 'paul', :id => "1", :start => "2015-03-11T15:25:00", :end => '2015-03-11T15:55:00'}, {:title => 'meads', :id => "2", :start => "2015-03-11T15:25:00", :end => '2015-03-11T15:55:00'}]
+  # @appointment.to_json();
 end
 
 get '/' do
@@ -47,15 +48,18 @@ post '/client' do
   end
 end
 
-post '/appointment' do
-
+post '/example' do
   @appointment = Appointment.create(:start_time => params[:start_time],
-                                    :date => params[:date],
+                                    :start => params[:date],
                                     :client_id => session[:client_id]
                                     )
 
 
   @appointment.save
+  @appointment = @appointment.to_json
+  puts "************************"
+  puts @appointment
+  # '/example.json' << @appointment
   redirect('/')
 
 end

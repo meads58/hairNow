@@ -7,6 +7,7 @@ gem 'bcrypt-ruby'
 gem 'rack-flash3'
 gem 'dm-serializer'
 gem 'sinatra-contrib'
+gem 'json'
 
 group :test, :develoment do
   gem 'rspec'
