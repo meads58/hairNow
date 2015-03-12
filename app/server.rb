@@ -19,7 +19,7 @@ class HairNow < Sinatra::Base
 
 
 get '/example.json' do
-  json :title => 'paul', :id => "1", :start => "2015-03-11T15:25:00", :end => '2015-03-11T15:55:00'
+  json [{:title => 'paul', :id => "1", :start => "2015-03-11T15:25:00", :end => '2015-03-11T15:55:00'}, {:title => 'meads', :id => "2", :start => "2015-03-11T15:25:00", :end => '2015-03-11T15:55:00'}]
 end
 
 get '/' do
