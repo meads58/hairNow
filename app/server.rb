@@ -17,14 +17,9 @@ class HairNow < Sinatra::Base
   use Rack::Flash
   use Rack::MethodOverride
 
-appointmentArray = Appointment.all.each do |appt|
-              appt.start
-              appt.client.first_name
-            end
-
 
 get '/example.json' do
-  json appointmentArray
+  json Appointment.all
 end
 
 get '/' do
