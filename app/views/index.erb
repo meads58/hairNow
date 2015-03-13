@@ -1,5 +1,28 @@
 <head>
+  <script src="jquery-ui.js"></script>
+  <script src='jquery-ui/jquery.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.css">
+</head>
+<body>
+  <div id="header">
+  <h1 id="logo">
+    HairNow
+    <p id="tm">TM</p>
+  </h1>
+  <p id="signup">
+    <a href='/client/new'><button type="button" id="signup_button">Sign Up</button></a>
+  </p>
+  <% if !current_user %>
+    <p id="signin">
+      <a href='/sessions/new'><button type="button" id="signin_button">Sign In</button></a>
+    </p>
+    <% end %>
+  </div>
+  <div id='calendar'></div>
+</body>
+
   <script>
+
     $(document).ready(function() {
 
       $('#calendar').fullCalendar({
@@ -8,11 +31,13 @@
         center: 'title'
       },
       events: '/example.json',
-      minTime: "07:00:00",
+      minTime: "09:00:00",
       maxTime: "21:00:00",
       defaultView: 'agendaWeek',
       selectable: true,
       selectHelper: true,
+      theme: true,
+      // Boolean, default: true,
       select: function(start, end) {
         var title = prompt('Enter booking:');
         var eventData;
@@ -31,19 +56,7 @@
       timeFormat: 'H(:mm)'
       })
     });
-
   </script>
-</head>
 
-<h1>
-  HairNow
-</h>
 
-<body>
-
-<p>
-  <a href='/client/new'><button type="button">Sign Up</button></a>
-</p>
-<div id='calendar'></div>
-</body>
 

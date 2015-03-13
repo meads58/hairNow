@@ -1,3 +1,177 @@
-body{
-  background-color: red;
+#header {
+  background-color: black;
+  color: white;
+  padding: 15px;
+}
+
+#logo{
+  position: relative;
+  bottom: 10px;
+  font-family: 'Pacifico', cursive;
+  color: #ff0dbf;
+  font-size: 50px;
+}
+
+#tm{
+  position: absolute;
+  font-family: 'Pacifico', cursive;
+  color: #ff0dbf;
+  font-size: 15px;
+  left: 16%;
+  bottom: 60%;
+}
+
+#signin_button{
+  position: relative;
+  float: right;
+  background-color: #FF5DB1;
+  background: -moz-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FF5DB1),color-stop(100%,#E94A86));
+  background: -webkit-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -o-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -ms-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#FF5DB1', endColorstr='#E94A86',GradientType=0);
+  padding:5px 9px;
+  color:black;
+  font-family: 'Pacifico', cursive;
+  font-size:12px;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border:1px solid #E8124F
+}
+
+#signup_button {
+  background: #FF5DB1;
+  background: -moz-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FF5DB1),color-stop(100%,#E94A86));
+  background: -webkit-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -o-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -ms-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#FF5DB1', endColorstr='#E94A86',GradientType=0);
+  padding:5px 7px;
+  color:black;
+  font-family: 'Pacifico', cursive;
+  font-size:12px;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border:1px solid #E8124F
+}
+
+#signup{
+  position: absolute;
+  left: 94%;
+  top: 4%;
+}
+
+#signin{
+  position: absolute;
+  left: 94%;
+  top: 10%;
+}
+
+#signup_page{
+  text-align: center;
+  padding: 20px;
+}
+
+#signup_boxes{
+  border-radius: 100px;
+  font-size: 18px;
+  background-color:black;
+  font-family: 'Pacifico', cursive;
+  color: #ff0dbf;
+  padding: 10px;
+}
+
+#signup_page_button{
+  border-radius: 100px;
+  font-family: 'Pacifico', cursive;
+  color: #ff0dbf;
+  background-color: black;
+  font-size:15px
+}
+
+#sign_in_page{
+  text-align: center;
+  padding: 20px;
+}
+
+#sign_in_boxes{
+  border-radius: 100px;
+  font-size: 18px;
+  background-color:black;
+  font-family: 'Pacifico', cursive;
+  color: #ff0dbf;
+  padding: 10px;
+}
+
+#sign_in_page_button{
+  border-radius: 100px;
+  font-family: 'Pacifico', cursive;
+  color: #ff0dbf;
+  background-color: black;
+  font-size:15px
+}
+
+#welcome_message{
+  position: absolute;
+  left: 82%;
+  font-family: 'Pacifico', cursive;
+  color: #ff0dbf;
+}
+
+#appointment_form{
+  z-index: 1;
+  position: absolute;
+  left: 40%;
+  top: 6%;
+}
+
+#booking_boxes{
+  font-size: 14px;
+  background-color:black;
+  font-family: 'Pacifico', cursive;
+  color: #ff0dbf;
+  padding: 5px;
+}
+
+#booking_button{
+  border-radius: 100px;
+  font-family: 'Pacifico', cursive;
+  color: #ff0dbf;
+  background-color: black;
+  font-size:14px
+}
+
+#sign_out_button{
+  position: absolute;
+  top: 10%;
+  left: 94%;
+  background-color: #FF5DB1;
+  background: -moz-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FF5DB1),color-stop(100%,#E94A86));
+  background: -webkit-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -o-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: -ms-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  background: linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#FF5DB1', endColorstr='#E94A86',GradientType=0);
+  padding:5px 9px;
+  color:black;
+  font-family: 'Pacifico', cursive;
+  font-size:12px;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border:1px solid #E8124F
+}
+
+#calendar{
+  position: relative;
+  top: 20px;
+  font-family: 'Lato', sans-serif;
+  padding: 15px;
 }

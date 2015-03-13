@@ -4,32 +4,37 @@
   <head>
     <title>hairNow</title>
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
-    <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <script src='fullcalendar/lib/jquery.min.js'></script>
     <script src='fullcalendar/lib/moment.min.js'></script>
     <script src='fullcalendar/fullcalendar.js'></script>
   </head>
 
   <body>
-    <% if current_user %>
-      Welcome, <%= current_user.first_name %>
-    <form method="post" action="/sessions">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Sign Out">
-    </form>
-    <form method="post" action="/appointment">
-      <input type="time" name="start_time">
-      <input type="date" name="date">
-      <input type="submit" value="Book Appointment">
-    </form>
-    <% else %>
-      <p>
-        <a href='/sessions/new'><button type="button">Sign In</button></a>
-      </p>
-    <% end %>
-    <%= yield %>
+    <div id="header">
+    </div>
+    <div id="welcome_message">
+      <% if current_user %>
+        Welcome, <%= current_user.first_name %>
+    </div>
+      <form method="post" action="/sessions">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Sign Out" id="sign_out_button">
+      </form>
+
+      <div id="appointment_form">
+      <form method="post" action="/appointment">
+        <input type="time" name="start_time" id="booking_boxes">
+        <input type="date" name="date" id="booking_boxes">
+        <input type="submit" value="Book Appointment" id="booking_button">
+      </form>
+      </div>
+      <% end %>
+      </div>
+      <%= yield %>
   </body>
-
-
 </html>
 
