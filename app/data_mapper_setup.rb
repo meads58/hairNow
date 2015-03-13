@@ -1,4 +1,5 @@
-env ='development'
+#env ='development'
+env = ENV['RACK_ENV']||'development'
 
 DataMapper.setup(:default, "postgres://localhost/hair_now_#{env}")
 

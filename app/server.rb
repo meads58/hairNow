@@ -17,9 +17,12 @@ class HairNow < Sinatra::Base
   use Rack::Flash
   use Rack::MethodOverride
 
-
 get '/example.json' do
-  json Appointment.all
+  json_load = Appointment.all.to_json(:only=>[:start],:relationships=>{:client=>{:only=>[:first_name]}})
+  json_load.gsub!(/"client":{/, '')
+  json_load.gsub!(/}}/, '}')
+  json_load.gsub!(/first_name/, 'title')
+  json_load
 end
 
 get '/' do
@@ -58,7 +61,6 @@ post '/appointment' do
   redirect('/')
 end
 
-
 get '/sessions/new' do
   @appointment = Appointment.new
   erb :"sessions/new"
@@ -83,10 +85,8 @@ get '/sessions/new' do
  end
 
   helpers do
-
     def current_user
       @current_user ||=Client.get(session[:client_id]) if session[:client_id]
     end
   end
-
 end
