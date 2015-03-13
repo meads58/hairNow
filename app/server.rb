@@ -2,8 +2,10 @@ require 'data_mapper'
 require 'sinatra'
 require './app/model/clients.rb'
 require './app/model/appointments.rb'
+require './app/model/text.rb'
 require 'rack-flash'
 require 'sinatra/json'
+require 'twilio-ruby'
 require_relative 'data_mapper_setup'
 
 class HairNow < Sinatra::Base
@@ -55,6 +57,10 @@ post '/appointment' do
                                     :client_id => session[:client_id]
                                     )
   @appointment.save
+  name = current_user.first_name
+  textbooking = params[:date] + " " + params[:start_time]
+  text = Text.new
+  text.send_text(name, textbooking)
   redirect('/')
 end
 

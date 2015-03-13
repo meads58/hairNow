@@ -1,15 +1,16 @@
 #header {
   background-color: black;
   color: white;
-  padding: 15px;
+  padding: 12px;
 }
 
 #logo{
   position: relative;
-  bottom: 10px;
+  bottom: 30px;
   font-family: 'Pacifico', cursive;
   color: #ff0dbf;
   font-size: 50px;
+  left: 3%;
 }
 
 #tm{
@@ -18,7 +19,7 @@
   color: #ff0dbf;
   font-size: 15px;
   left: 16%;
-  bottom: 60%;
+  bottom: 30px;
 }
 
 #signin_button{
@@ -173,5 +174,5 @@
   position: relative;
   top: 20px;
   font-family: 'Lato', sans-serif;
-  padding: 15px;
+  padding: 10px;
 }
